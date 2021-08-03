@@ -3,7 +3,6 @@ namespace pmill\AwsCognito\Tests\Unit;
 
 use Aws\CognitoIdentityProvider\CognitoIdentityProviderClient;
 use Aws\ResultInterface;
-use Faker\Factory;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use pmill\AwsCognito\CognitoClient;
@@ -32,7 +31,7 @@ class CognitoClientTest extends TestCase
 
     public function setUp(): void
     {
-        $this->faker = Factory::create();
+        $this->faker = new \stdClass();
 
         $this->cognitoIdentityProviderClientMock = $this
             ->getMockBuilder(CognitoIdentityProviderClient::class)
